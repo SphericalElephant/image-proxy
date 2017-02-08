@@ -25,7 +25,9 @@ nconf.defaults({
     'image/png',
       // Common typos
     'image/jpg'
-  ]
+  ],
+  cache: true,
+  cacheFolder: './cache'
 });
 
 nconf.file(process.argv[2]);
