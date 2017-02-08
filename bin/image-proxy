@@ -11,23 +11,24 @@ if (!process.argv[2]) {
     process.exit(1);
 }
 if (!fs.existsSync(process.argv[2])) {
-  console.error('File does not exist: ' + process.argv[2]);
-  process.exit(1);
+    console.error('File does not exist: ' + process.argv[2]);
+    process.exit(1);
 }
 
 nconf.defaults({
-  port: 3000,
-  requestTimeout: 5000,
-  whitelist:[],
-  mimeTypes:[
-    'image/gif',
-    'image/jpeg',
-    'image/png',
-      // Common typos
-    'image/jpg'
-  ],
-  cache: true,
-  cacheFolder: './cache'
+    port: 3000,
+    requestTimeout: 5000,
+    whitelist: [],
+    mimeTypes: [
+        'image/gif',
+        'image/jpeg',
+        'image/png',
+        // Common typos
+        'image/jpg'
+    ],
+    cache: true,
+    cacheFolder: './cache',
+    cacheControlHeaderTTL: '31536000'
 });
 
 nconf.file(process.argv[2]);

@@ -9,5 +9,6 @@
 		"image/jpg"
 	],
 	"cache": true,
-	"cacheFolder": "./cache"
+	"cacheFolder": "./cache",
+	"cacheControlHeaderTTL": "31536000"
 }
